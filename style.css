@@ -1,0 +1,662 @@
+
+html{
+
+    height: 100%;
+}
+
+body {
+	
+    height: 100%;
+}
+
+nav-wrapper grey darken-2 a.brand-logo {
+
+    font-size: 1.8em;
+}
+
+nav .brand-logo{
+
+    font-size: 1.8em;
+    padding-left: 1%;
+
+}
+
+small{
+   // vertical-align: 1em;
+    font-size: 50%;
+}
+
+.carousel .carousel-item{
+   width: 270px;
+   height: 200px;
+}
+
+.carousel {
+   border: 1px solid black;
+}
+.pocetnaslika{
+
+background-image: url(images/theatercrop.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
+width: 100%;
+
+
+min-height: 500px;
+
+
+
+
+
+
+}
+
+.pocetnaslika2{
+
+background-image: url(images/camera.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
+width: 100%;
+
+
+min-height: 500px;
+
+
+
+
+
+
+}
+
+.pocetnaslika3{
+
+    background-image: url(images/curtain.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    width: 100%;
+    
+    
+    height: 2500px;
+    
+    
+    
+    
+    
+    
+    }
+
+.coloroverlay{
+
+    width: 100%;
+    height: inherit;
+    background: black;
+    opacity: 0.6;
+    position: absolute;
+    min-height: 500px;
+    z-index: 1;
+}
+
+p{
+	
+    z-index: 2;
+    color: white;
+    font-size: 130px;
+    opacity: 1 !important;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    top: 50px;
+	width: inherit;
+	padding: 0px;
+}
+
+#citat{
+    z-index: 2;
+    color: white;
+    font-size: 20px;
+    opacity: 1 !important;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+
+}
+
+#citat2{
+    z-index: 2;
+    color: white;
+    font-size: 30px;
+    opacity: 1 !important;
+    top:250px;
+    position: relative;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+	width: 40%;
+
+
+}
+#citat3{
+    z-index: 2;
+    color: white;
+    font-size: 30px;
+    opacity: 1 !important;
+    top:250px;
+	left: 40px;
+    position: relative;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+	width: 40%;
+
+
+}
+#citat4{
+    z-index: 2;
+    color: white;
+    font-size: 30px;
+    opacity: 1 !important;
+    top:250px;
+	left: 80px;
+    position: relative;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+	width: 40%;
+
+
+}
+#citat5{
+    z-index: 2;
+    color: white;
+    font-size: 30px;
+    opacity: 1 !important;
+    top:250px;
+	left:100px;
+    position: relative;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+	width: 40%;
+
+
+}
+#citat6{
+    z-index: 2;
+    color: white;
+    font-size: 20px;
+    opacity: 1 !important;
+    top:250px;
+	left:120px;
+    position: relative;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+	width: 40%;
+	
+
+
+}
+
+#naslovstranice{
+    z-index: 2;
+    color: white;
+    font-size: 20px;
+    opacity: 1 !important;
+	right: 50px;
+	top: 80px;
+	font-family: 'Crimson Text', serif;
+    position: absolute;
+    text-align: center;
+    line-height: 2.5;
+	width: 20%;
+	display: none;
+	text-shadow: 0.5px 0.5px yellow;
+
+
+}
+
+
+#crta{
+  border-left: 2px solid white; 
+  display: inline-block; 
+  position: absolute; 
+  height: 40px; 
+  top: 10px; 
+  right: 300px;
+  padding: 0px;
+  
+
+}
+
+nav ul a:hover{
+	color: yellow;
+	
+}
+
+h6 {
+    
+    width: 100%;
+   
+}
+
+.btn, .btn-large, .btn-small {
+
+    background-color: #393f3e;
+}
+
+.slikica {
+	border: 1px solid black;
+    width:70%;
+	height: 150px;
+	margin: 0 auto;
+	border: 2px solid black;
+}
+	
+
+.tekstzaslikicu p  {
+	font-size: 12px;
+    
+	top: 5px;
+	margin: 0 auto;
+	
+	
+}
+
+.tekstzaslikicu   {
+	
+    width:70%;
+	
+    margin: 0 auto;
+    padding-bottom: 20px;
+	
+	
+	
+}
+
+div.collapsible-body {
+	margin: 0 auto;
+	padding: 5px;
+	text-align: justify;
+	
+}
+
+div.collapsible-header {
+	background-color: #bdbdbd ;
+	padding: 0px;
+	margin: 0px;
+}
+
+h6.waves-effect.waves-light.btn-large {
+	padding: 0px;
+	margin: 0px;
+	}
+	
+span {
+	font-size: 12px;
+^}
+
+.nazivrazdoblja {
+
+font-size: 16px;
+font-weight: bold;
+text-decoration: underline;
+
+	
+}
+
+div.input-field.col.s5 {
+	
+	margin: 0px;
+	padding: 0px;
+}
+
+.select-wrapper input.select-dropdown	{
+position: relative;
+bottom: 13px;
+border-bottom: none;
+font-size: 14px;
+
+
+}
+
+.select-wrapper input.select-dropdown:focus{
+    border-bottom: none;
+
+}
+
+.select-wrapper {
+width: 90px;
+left: 430px;
+
+}
+
+
+
+.dropdown-content{
+
+    min-width: 60px;
+}
+
+.select-dropdown.dropdown-content{
+
+    background-color: #f5f5f5;
+}
+
+.dropdown-content li {
+
+    min-height: 20px;
+    width: 50%;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    color: black;
+    
+}
+
+select-dropdown {
+
+    width: 60px;
+}
+
+ul{
+    width: 100% !important;
+    top: 35px !important;
+    
+}
+li{
+    top: 35px !important;
+    width: 100% !important;
+}
+
+.lisidebar{
+
+    width: 100% !important;
+}
+
+#ulsidebar{
+
+    width: 100% !important;
+}
+
+.navbarli{
+	top: 0px;
+    width: 30% !important;
+	
+}
+
+#navbarul{
+	top: 0px;
+    width:30% !important;
+}
+i {
+	
+	color: white;
+}
+
+img.slikeredatelja.responsive-img {
+width: 443px;
+height:312px;
+}
+.redatelj{
+font-family: Arial;
+font-size: 20px;
+color: black;
+
+	}
+	
+td{
+font-family: Arial;
+font-size: 17px;
+color: black;
+padding: 0px;
+text-overflow: ellipsis;
+overflow: hidden;
+min-width: 30px;
+
+	}
+
+
+.bio{
+font-family: Arial;
+font-size: 15px;
+color: black;
+width:100%;
+//position: relative;
+top: -5px;
+text-align: justify;
+float: clear;
+
+
+
+	}
+	
+table {
+margin-right: 10px;
+border-bottom: 1px solid black;
+border-right: 1px solid black;
+width: 30%;
+float: left;
+//border: 1px solid black;
+font-style: italic;
+}
+
+#cover{
+
+background-image: url(images/ecliseedvd.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.generiranitekst{
+font-family: 'Times New Roman', Times, serif;
+color: black ;
+}
+
+
+.paginacijalinkovi{
+
+    top: 0px !important;
+    width: 3% !important;
+
+}
+
+.pagination li a {
+    color: #444 !important;
+    display: inline-block !important;
+    font-size: 1.2rem !important;
+    padding: 0 10px !important;
+    line-height: 30px !important;
+}
+
+.pagination li {
+    display: inline-block !important;
+    border-radius: 2px !important;
+    text-align: center !important;
+    vertical-align: top !important;
+    height: 30px !important;
+}
+
+.pagination{
+
+    text-align: center;
+}
+
+li.disabled{
+
+    top: 0px !important;
+    width: 3% !important;
+}
+
+div.col.s2.ispis{
+
+    cursor: pointer;
+}
+
+div.row.mojwrapper{
+padding-top: 20px;
+margin: 0 auto;
+width: 90%;
+height: 800px;
+}
+
+.sadrzaj{
+
+    font-size: 16px;
+    font-family: Times;
+    color:white;
+    text-align: justify;
+    padding-top: 20px;
+    
+}
+
+#tablicaspodacima td{
+
+   color: white;
+   
+}
+
+textarea.materialize-textarea{
+width: 80%;
+color: rgb(201, 185, 185);
+
+
+}
+
+#postanikomentari{
+
+    text-align: left;
+    margin-top: 10px;
+}
+
+#signupforma{
+
+   
+    margin-top: 20px;
+    border-radius: 5px;
+    //width: 40%;
+    position: relative;
+    left: 20px;
+}
+
+
+
+.natpis{
+    padding-top: 20px;
+    color: white;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+
+.input-field label {
+    color: white;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #000;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active 
+    color: #000;
+  }
+
+  #submitbutton{
+    
+    display: block;
+    
+    width: 50px;;
+  }
+
+  #submitbutton {
+
+    background-color:#e66960;
+  }
+
+  #submitbutton:hover {
+
+    background-color: #e62719;
+  }
+
+  #thumbsup{
+
+    width: 80%;
+   margin: 0 auto;
+   display: block;
+  }
+
+  #listaKomentara{
+    border-top: 1px solid black;
+    width: 100%;
+  }
+
+  #listaKomentara thead tr th{
+
+    font-family: Arial;
+    font-size: 17px;
+    color: black;
+    padding: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 30px;
+  }
+  #listaKomentara tbody tr{
+
+    background-color: #bdbdbd;
+
+    
+  }
+
+  #listaKomentara tbody tr td:nth-child(4){
+
+    cursor: pointer;
+
+    
+  }
+
+  #listaKomentara tbody tr td:nth-child(5){
+
+    cursor: pointer;
+
+    
+  }
+ .hover:hover{
+
+    background-color: #b0b2b8;
+  }
+
+  .avatar{
+
+    width: 100%;
+    height: 200px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+    margin-top: 10px;
+  }
+
+  //input[type="file"] {
+    display: none;
+    }
+
+  
+ 
