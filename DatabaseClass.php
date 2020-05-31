@@ -3,7 +3,7 @@
 class Database {
 
 private $host = "localhost";
-private $dbname = "dajanova_baza";
+private $dbname = "movies";
 private $username = "root";
 private $password = "";
 private $conn;

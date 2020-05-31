@@ -7,7 +7,7 @@ $password=mysqli_real_escape_string($conn, $_POST['password']);
 
 if (empty($username) || empty($password)){
 
-    header("Location: sign-up.php?login=errorpraznopolje" );
+    header("Location: login.php?login=errorpraznopolje" );
     exit();
 }
 
@@ -18,7 +18,7 @@ else {
    $resultCheck = mysqli_num_rows($result);
         if ($resultCheck < 1){
 
-             header("Location: sign-up.php?login=errornijedoniorezultat" );
+             header("Location: login.php?login=errornijedoniorezultat" );
              exit();
         }
         
@@ -26,18 +26,18 @@ else {
             if ($row = mysqli_fetch_assoc($result)){
 
                 if(!$password === $row['password']){
-                    header("Location: sign-up.php?login=errorkrivipass" );
+                    header("Location: login.php?login=errorkrivipass" );
                     exit();
 
                 }
 
                 else {
-                    $_SESSION['ID'] = $row['ID'];
-                    $_SESSION['name'] = $row['Name'];
-                    $_SESSION['surname'] = $row['Surname'];
-                    $_SESSION['username'] = $row['Username'];
-                    $_SESSION['password'] = $row['Password'];
-                    $_SESSION['email'] = $row['Email'];
+                    $_SESSION['ID'] = $row['id'];
+                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['surname'] = $row['surname'];
+                    $_SESSION['username'] = $row['username'];
+                    $_SESSION['password'] = $row['password'];
+                    $_SESSION['email'] = $row['email'];
                     $_SESSION['avatarstring'] = $row['avatarString'];
 
                     header("Location: userhomepage.php" );

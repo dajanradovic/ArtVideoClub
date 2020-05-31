@@ -1,5 +1,5 @@
 <div id="signupforma" class="col s5 ">
-                <form id="form" action="forma.php" method="POST">
+                <form id="form" action="loginform.php" method="POST">
 
                    
                     <div class="row">

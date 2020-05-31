@@ -25,41 +25,41 @@ include_once 'databaseconnection.php';
 
 if (empty ($_SESSION['username'])){
   
- include ("headernormalversion.php");
+ include ("includes/headernormalversion.php");
 		   }
 
 
 	 else {
 
-	   include ("headerloginversion.php");
+	   include ("includes/headerloginversion.php");
 	 }
 ?>
       
-      <div class="pocetnaslika">
+      <div class="pocetnaslika col s12">
 
-        <div class="coloroverlay">
+        <div class="coloroverlay col s12">
           
 
 
         </div>
-        <p>Relax and watch</p>
-        <p id="citat">-- No stupid hollywood shit, only the real movies here --</p>
+        <p class="citatUmalom">Relax and watch</p>
+        <p class="citatUmalom" id="citat">-- No stupid hollywood shit, only the real movies here --</p>
       </div>
     
 	
 	<div class="row" class="#bdbdbd grey lighten-1" style="margin-top: 20px;">
-		<div class="col s12"  >
+		<div class="col m12 s12"  >
 		<div class="carousel">
-			<a class="carousel-item"   href="#one!"><img src="images/izmjenjive/1.jpg"></a>
-				<a class="carousel-item"  href="#two!"><img src="images/izmjenjive/2.jpg"></a>
-				<a class="carousel-item"  href="#three!"><img src="images/izmjenjive/3.jpg"></a>
-				<a class="carousel-item"  href="#four!"><img src="images/izmjenjive/4.jpg"></a>
-				<a class="carousel-item"  href="#five!"><img src="images/izmjenjive/5.jpg"></a>
-				<a class="carousel-item"   href="#one!"><img src="images/izmjenjive/6.jpg"></a>
-				<a class="carousel-item"  href="#two!"><img src="images/izmjenjive/7.jpg"></a>
-				<a class="carousel-item"  href="#three!"><img src="images/izmjenjive/8.jpg"></a>
-				<a class="carousel-item"  href="#four!"><img src="images/izmjenjive/9.jpg"></a>
-				<a class="carousel-item"  href="#five!"><img src="images/izmjenjive/10.jpg"></a>
+			<a class="carousel-item"   href="#one!"><img   src="images/izmjenjive/1.jpg"></a>
+				<a class="carousel-item"  href="#two!"><img  src="images/izmjenjive/2.jpg"></a>
+				<a class="carousel-item"  href="#three!"><img  src="images/izmjenjive/3.jpg"></a>
+				<a class="carousel-item"  href="#four!"><img  src="images/izmjenjive/4.jpg"></a>
+				<a class="carousel-item"  href="#five!"><img  src="images/izmjenjive/5.jpg"></a>
+				<a class="carousel-item"   href="#one!"><img  src="images/izmjenjive/6.jpg"></a>
+				<a class="carousel-item"  href="#two!"><img  src="images/izmjenjive/7.jpg"></a>
+				<a class="carousel-item"  href="#three!"><img  src="images/izmjenjive/8.jpg"></a>
+				<a class="carousel-item"  href="#four!"><img  src="images/izmjenjive/9.jpg"></a>
+				<a class="carousel-item"  href="#five!"><img  src="images/izmjenjive/10.jpg"></a>
 		</div>
 
 		</div>
@@ -69,7 +69,7 @@ if (empty ($_SESSION['username'])){
 
 <div class="row" class="#bdbdbd grey lighten-1" style="margin-top: 20px;">
   
-  <div class="col s2" style="border-right: 1px solid black; border-top: 1px solid black; height: 2000px; padding-right: 10px;">
+  <div class="col m2 s12" id="moviePeriodsMenu" style="border-right: 1px solid black; border-top: 1px solid black; padding-right: 10px;">
  
 <ul class="collapsible #bdbdbd grey lighten-1 " id="ulsidebar" >
     <li class="lisidebar">
@@ -91,17 +91,14 @@ if (empty ($_SESSION['username'])){
   </ul>
  
     </div>
-	
-	<div class="col s5" style="padding-left: 35px;"> <span class="nazivrazdoblja">You're browsing through films from:</span></div>
-	<div class="input-field col s5" style="padding-bottom: 10px; padding-top: 0px;"><div id="proba""><select>
-      <option  disabled selected ><small>Order by:<small></option>
-      <option  value="1">Name</option>
-	  <option  value="2">Last Added</option>
-	  <option  value="3">First Added</option>
-    </select></div></div>
+	<div class="col m10 s12">
+	<div class="col m5 s12" style="margin-bottom:20px;"> <span class="nazivrazdoblja">Click on the film to see details</span></div>
 	
 	
-	<div  class="col s10" id="listafilmova">
+	</div>
+	
+	
+	<div  class="col m7 s12" id="listafilmova">
 	<?php
 
 
@@ -112,7 +109,7 @@ $resultcheck = mysqli_num_rows($result);
 
 if ($resultcheck > 0){
 		while ($row = mysqli_fetch_assoc($result)){
-				echo '<div class="col s2 ispis">
+				echo '<div class="col s6 m3 ispis">
 				 <div class="slikica" style="background-image: url('.$row['posteraddress'].'); background-repeat: no-repeat; background-size: cover;">
 				
 				</div>
@@ -131,16 +128,12 @@ if ($resultcheck > 0){
 ?>
 
 </div>
-<div class="col s10">
-<ul class="pagination">
-    <li class="disabled" style="padding-right: 50px;"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active paginacijalinkovi"><a href="#!"id="brojjedan">1</a></li>
-    <li class="waves-effect paginacijalinkovi"><a href="#!" id="brojdva">2</a></li>
-    <li class="waves-effect paginacijalinkovi"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>	
+
 </div>
-	
-</div>
+<?php
+   include ('includes/footer.php');
+
+   ?>
 
 
 
@@ -154,9 +147,15 @@ if ($resultcheck > 0){
 	$(document).ready(function(){
     $('.carousel').carousel({
 	fullWidth: true,
-	numVisible: 7
+	numVisible: 7,
+	
+	
 	
 	});
+
+	$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 
 	$("select").change(function(){
@@ -217,7 +216,7 @@ if ($resultcheck > 0){
 
 	$('#listafilmova').on('click', '.ispis', function(){
 					var imeFilma = $(this).find("div.tekstzaslikicu p#imefilma.generiranitekst ").text();
-					window.open("prikazfilma.php" + '?title=' + imeFilma);
+					window.open("prikazfilma.php" + '?title=' + imeFilma, '_self');
 					
 
 

@@ -18,21 +18,20 @@
     <title>VideoClub</title>
 </head>
 
-<body class="#bdbdbd grey lighten-1">
-    <nav>
-        <div class="nav-wrapper black">
-            <a href="#" class="brand-logo " style="font-family: 'Permanent Marker', cursive;">VideoClub<small> - for all
-                    the real movie lovers<small></a>
-            <ul id="navbarul" id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="navbarli" id="directors"> <a href="directors.html">Directors</a></li>
-                <div id="crta"></div>
-                <li class="navbarli"><a class="waves-effect waves-light btn-small" href="login.html">Log-in</a></button>
-                <li class="navbarli"><a class="waves-effect waves-light btn-small" href="sign-up.php">Sign-up</a></li>
-            </ul>
+<body style="background-color:rgba(0,0,0,0.87)">
+<?php
 
-        </div>
+if (empty ($_SESSION['username'])){
+  
+ include ("includes/headernormalversion.php");
+		   }
 
-    </nav>
+
+	 else {
+
+	   include ("includes/headerloginversion.php");
+	 }
+?>
 
     <div class="row" style="background-color: #282525;">
 
@@ -49,7 +48,7 @@ if ($_SERVER ['QUERY_STRING'] == "signup=success"){
         </h6>
     </div>
 </div>');
-    include ("logininclude.html");
+    include ("logininclude.php");
                     }
      
 
@@ -130,6 +129,10 @@ if ($_SERVER ['QUERY_STRING'] == "signup=success"){
 
     </div>
 
+    <?php
+   include ('includes/footer.php');
+
+   ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
 
@@ -139,6 +142,10 @@ if ($_SERVER ['QUERY_STRING'] == "signup=success"){
     <script>
         $(document).ready(function () {
             M.updateTextFields();
+
+            $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 
         $('#submitbutton').click(function(e){

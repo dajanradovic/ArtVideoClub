@@ -3,8 +3,14 @@
 session_start();
 $userId = $_SESSION['ID'];
 
+if (empty($_SESSION['username'])){
+
+	header("Location: login.php");
+};
+
 if (empty ($_SESSION['avatarstring'])){
-	$avatarStringUrl="";}
+	$avatarStringUrl="";
+		}
 
 	else{
 		$avatarStringUrl = $_SESSION['avatarstring'];}
@@ -39,11 +45,11 @@ if (empty ($_SESSION['avatarstring'])){
     
 <?php
 
-include ("headerloginversion.php");
+include ("includes/headerloginversion.php");
 ?>
 
 <div class="row" >
-<div class="col s2" >
+<div class="col m2 s10" >
 
 <?php if ($avatarStringUrl != 0){
  echo ('<div class="avatar" style="background-image: url(uploads/'. $avatarStringUrl . ')"></div>');
@@ -57,8 +63,8 @@ include ("headerloginversion.php");
  ?>
 
 <form action="uploadProfileImage.php" method="POST" enctype="multipart/form-data">
-<input class="btn-small" style="color:transparent; width:100%; padding-left: 0px;" onchange="this.style.color = 'white';" type="file" name="file" title=" ">
-<button class="btn-small" style="margin-top :10px; "  type="submit" name="submit">Upload</button>
+<input class="btn-small" id="inputAvatar" style="color:transparent; width:50%; padding-left: 0px;" onchange="this.style.color = 'white';" type="file" name="file" title=" ">
+<button id="uploadButton" class="btn-small" style="margin-top :10px; display:block; "  type="submit" name="submit">Upload</button>
 </form>
 
 
@@ -74,7 +80,7 @@ include ("headerloginversion.php");
 
 
 <div class="row">
-<div class="col s12">
+<div class="col s12" style="min-height:300px;"> 
 
 <table id="listaKomentara" class="responsive-table striped">
         
@@ -86,10 +92,13 @@ include ("headerloginversion.php");
 
 </div>
 
+</div>
 
 
+<?php
+   include ('includes/footer.php');
 
-<div>
+   ?>
 
 
 
@@ -113,6 +122,10 @@ include ("headerloginversion.php");
 
 $(document).ready(function(){
 	$.ajaxSetup({ cache: false });
+
+	$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 	$('.modal').modal();
 	$('#textarea1').val('New Text');
@@ -141,7 +154,7 @@ function listOfComments(){
 
 							$.each(data, function (key, value){
 
-								$("#listaKomentara").append('<tbody><tr><td class="id1">' + data[key].id + '</td><td class="hover">' + data[key].message + '</td><td>' + data[key].postedon + '</td><td ><a class="modal-trigger" href="#modal1"><span class="badge blue" style="color: black"; >Edit comment</span></a></td><td><span class="badge red" style="color: black";>Delete comment</span></td></tr><tbody>');
+								$("#listaKomentara").append('<tbody><tr class="commentsTableRow"><td class="id1">' + data[key].id + '</td><td class="hover">' + data[key].message + '</td><td>' + data[key].postedon + '</td><td ><a class="modal-trigger" href="#modal1"><span class="badge blue" style="color: black"; >Edit comment</span></a></td><td><span class="badge red" style="color: black";>Delete comment</span></td></tr><tbody>');
 
           
 
@@ -163,7 +176,7 @@ function listOfComments(){
 
 						error: function (err){
 
-							alert(err);
+							
 						}
 
 
@@ -253,7 +266,7 @@ $("#updateComment").click(function(){
 function generirajTekstZaUrediti(){
 	
 	let tekst = $(this).siblings('.hover').text();
-	alert("tu sam");
+	
 	let id = $(this).siblings('.id1').html();
 	$('#textarea1').val(tekst);
 	

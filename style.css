@@ -2,10 +2,11 @@
 html{
 
     height: 100%;
+    width:100%;
 }
 
 body {
-	
+	width:100%;
     height: 100%;
 }
 
@@ -79,7 +80,8 @@ min-height: 500px;
     width: 100%;
     
     
-    height: 2500px;
+    height: 100%;
+    
     
     
     
@@ -87,6 +89,13 @@ min-height: 500px;
     
     
     }
+
+ #frameRow{
+
+    background-color:black;
+    outline-style:solid;
+    outline-color: red;
+ }   
 
 .coloroverlay{
 
@@ -499,8 +508,8 @@ div.col.s2.ispis{
 div.row.mojwrapper{
 padding-top: 20px;
 margin: 0 auto;
-width: 90%;
-height: 800px;
+width: 100%;
+height: 100%;
 }
 
 .sadrzaj{
@@ -509,7 +518,7 @@ height: 800px;
     font-family: Times;
     color:white;
     text-align: justify;
-    padding-top: 20px;
+    padding-top: 10px;
     
 }
 
@@ -538,6 +547,7 @@ color: rgb(201, 185, 185);
     margin-top: 20px;
     border-radius: 5px;
     //width: 40%;
+    min-height:600px;
     position: relative;
     left: 20px;
 }
@@ -608,6 +618,12 @@ color: rgb(201, 185, 185);
     width: 100%;
   }
 
+  .citatUmalom{
+     
+     text-align:center;
+
+  }
+
   #listaKomentara thead tr th{
 
     font-family: Arial;
@@ -658,5 +674,216 @@ color: rgb(201, 185, 185);
     display: none;
     }
 
+    .carousel-item{
+
+        width:20% !important;
+        height:100%;
+    }
   
- 
+ @media only screen and (max-width:480px){
+
+    .carousel-item{
+
+        width:20% !important;
+        height:100%;
+    }
+
+    .pocetnaslika{
+
+        width:100%;
+        min-height:300px;
+
+    }
+
+    #frameRow{
+
+        margin-top:1%;
+    }
+
+   
+    .directorStats{
+        border:none;
+        font-size:10px;
+    }
+    #moviePeriodsMenu{
+            border-top:0px !important;
+            border-right:0px !important;
+        
+    }
+
+    .responsive-img{
+
+        width:100% !important;
+        height:auto;
+        margin: 0 auto;
+    }
+
+    .select-wrapper .caret{
+
+        right:750%;
+    }
+
+    .select-wrapper input.select-dropdown	{
+        right:70%;
+        bottom:30px;
+        
+        
+        }
+        
+
+    nav .brand-logo{
+        text-align:center;
+       width:100%;
+       display:block;
+        font-size:14px; !important;
+    }
+    .citatUmalom{
+
+        font-size:20px;
+        transform:unset;
+    }
+
+    .coloroverlay{
+
+       min-height:300px;
+    }
+
+    .navbarli{
+        display:block;
+        width:100%;
+
+    }
+
+    #sort{
+
+        display:none;
+    }
+
+    #listafilmova{
+
+        margin-top:20px;
+    }
+
+    #naslovstranice{
+        font-size:12px;
+        line-height:1;
+    }
+
+    #citat{
+        z-index: 2;
+        color: white;
+        font-size: 15px;
+        opacity: 1 !important;
+        margin: 0;
+        position: relative;
+        text-align: center;
+        font-family: 'Permanent Marker', cursive;
+    
+    }
+    
+    #citat2{
+       
+        font-size: 15px;
+        opacity: 1 !important;
+        top:50px;
+        left:10px;
+       
+    
+    
+    }
+    #citat3{
+       
+        font-size: 15px;
+        opacity: 1 !important;
+        top:50px;
+        left: 10px;
+       
+    
+    
+    }
+    #citat4{
+      
+        font-size: 15px;
+        opacity: 1 !important;
+        top:50px;
+        left: 10px;
+       
+    
+    
+    }
+    #citat5{
+       
+        font-size: 15px;
+        opacity: 1 !important;
+        top:50px;
+        left:10px;
+      
+    
+    
+    }
+    #citat6{
+       
+        font-size:15px;
+        opacity: 1 !important;
+        top:50px;
+        left:10px;
+      
+        
+    
+    
+    }
+
+    .bio{
+       
+        font-size:12px;
+    }
+
+    .mobilniOdjeljak{
+        margin-top:10px;
+    }
+   .pocetnaslika2{
+
+      
+      min-height:300px !important;
+      height:300px !important;
+    }
+
+    .striped responsive-table td{
+                font-size:12px !important;
+
+    }
+
+    .trstyle{
+
+        font-size:10px !important;
+    }
+
+    table td{
+
+        font-size:10px;
+    }
+   
+
+    .sidenav li a {
+
+        font-size:10px;
+        padding: 0 0 0 0;
+    }
+
+    #uploadButton{
+
+        display:block !important;
+    }
+
+    #inputAvatar{
+
+        width:32% !important;
+    }
+
+    .commentsTableRow td{
+        font-size:17px !important;
+        width:100% !important;
+    }
+
+    
+ }

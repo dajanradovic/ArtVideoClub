@@ -8,7 +8,7 @@ echo ('
          <input type="hidden"  name="userId" value="'.  $userId . '">
         <div class="input-field col s12">
          
-          <textarea id="textarea1" name="komentar" class="materialize-textarea"></textarea>
+          <textarea id="textarea1" name="komentar" style="color:black;" class="materialize-textarea"></textarea>
           <label for="textarea1">Comment the movie:</label>
         
         </div>

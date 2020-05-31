@@ -16,11 +16,11 @@ $_SESSION['naziv'] = $_SERVER['QUERY_STRING'];
 
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"/>
-       
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-     
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      <link rel="stylesheet" type="text/css" href="style.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,13 +35,13 @@ $_SESSION['naziv'] = $_SERVER['QUERY_STRING'];
 
  if (empty ($_SESSION['username'])){
    
-  include ("headernormalversion.php");
+  include ("includes/headernormalversion.php");
             }
 
 
       else {
 
-        include ("headerloginversion.php");
+        include ("includes/headerloginversion.php");
       }
 ?>
       <?php
@@ -72,17 +72,18 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
         $GLOBALS['movieId']= $row['id'];
 ?>
 
-<div class="pocetnaslika3">
+
 
         
- <div class="row mojwrapper ">
-    <div class="col s5">
-    <img class="responsive-img"  style="width: 80%; max-height: 500px; border: 3px solid white;" src="<?php  echo $row['posteraddress'] ?>" >
+ <div class="row mojwrapper pocetnaslika3" style="overflow:auto;">
+    <div class="col m3 s12 " style="text-align:center;">
+    <img class="responsive-img"  style="width:100%; height:auto;" src="<?php  echo $row['posteraddress'] ?>" >
     
     </div>
+    <div col m2></div>
    
-    <div class="col s7">
-    <table class="responsive-table" id="tablicaspodacima" style="width: 100%;">
+    <div class="col m7 s12">
+    <table class="table" id="tablicaspodacima" style="width: 100%;">
            <tbody>
 
          
@@ -131,15 +132,15 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
             
 
 
-    </div>
+    
 
-
-    <div col s7>
+<div class="col m12 s 12">
+   
       <p class="sadrzaj"><u>Synopsis:</u></p>
 
       <p class="sadrzaj"><i><?php echo $row['plot'];  ?></i></p>
      
-    <div>
+      </div>
  
  
  
@@ -148,25 +149,26 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
  
  
       </div>
-
+      </div>
+      
+      
 
      
-      <div class="row">
-        <div class="col s12" style="color:white;">
-        <hr style="color:white; margin-top: 30px;">
-        
-      </div>
+     
+      
 
-      <div class="row" >
-        <div class="col s6 offset-s3" >
-        <iframe style="margin-top: 30px;" width="560" height="315" src="https://www.youtube.com/embed/<?php echo $row['trailerlink'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="row" id="frameRow" >
+        <div class="col m6 offset-m3 s12 mt-1" >
+        <iframe  width="100%" height="315" src="https://www.youtube.com/embed/<?php echo $row['trailerlink'] ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <?php } ?>
       </div>
         </div>
 
-      <div class="row">
-        <div class="col s12">
-          <p class="sadrzaj"><u>Comments:</u></p>
+       
+
+      <div class="row" >
+        <div class="col s12 ">
+          <p class="sadrzaj" style="color:black"><u>Comments:</u></p>
         </div>
         </div>
 
@@ -179,26 +181,26 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
         $result2 = mysqli_query($conn, $sql);
           while ($row = mysqli_fetch_assoc($result2)){
                 $userid = $row['userId'];
-                $GLOBALS['postedon'] = $row['PostedOn'];
+                $GLOBALS['postedon'] = $row['postedOn'];
                 $sql2= "SELECT username FROM users where id= '$userid';";
                   $result3 = mysqli_query($conn, $sql2);
                   while ($row2 = mysqli_fetch_assoc($result3)){
                     $GLOBALS['komentator'] = $row2['username'];}
 
-        echo  ('<li style="font-size: 16px; font-family: Arial; color: white;">- ' . $row['message'] .'<span><i> added by:<b>    ' . $komentator . '</b> on: <b>' . $postedon .'</b></i></span></li>');
+        echo  ('<li style="font-size: 16px; font-family: Arial; color: black;">- ' . $row['message'] .'<span "><i style="color:black;"> added by:<b>    ' . $komentator . '</b> on: <b>' . $postedon .'</b></i></span></li>');
           } ?>
           </ul>
         </div>
         </div>
         
-       </div>
+       
 
           <?php 
 
         if (empty ($_SESSION['username'])){
 
           echo ('<div class="row" style="margin-top: 20px;">
-                    <span style="color:white;">Log in to post comments</span>
+                    <span style="color:black;">Log in to post comments</span>
           
           </div>');}
 
@@ -209,14 +211,10 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
           }
   ?>
         
-      </div>
+        <?php
+   include ('includes/footer.php');
 
-      </div>
-
-      </div>
-
-      
-     
+   ?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
@@ -229,6 +227,8 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
 	$(document).ready(function(){
 
     
+    $('.sidenav').sidenav();
+  });
     
    /* $('#submitbutton').on('click', function(){
            
@@ -236,7 +236,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)){
           
     });*/
     
-			});
+			
   </script>
 </body>
 

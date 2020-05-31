@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 
@@ -18,21 +17,21 @@
     <title>VideoClub</title>
 </head>
 
-<body class="#bdbdbd grey lighten-1">
-    <nav>
-        <div class="nav-wrapper black">
-            <a href="#" class="brand-logo " style="font-family: 'Permanent Marker', cursive;">VideoClub<small> - for all
-                    the real movie lovers<small></a>
-            <ul id="navbarul" id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="navbarli" id="directors"> <a href="directors.html">Directors</a></li>
-                <div id="crta"></div>
-                <li class="navbarli"><a class="waves-effect waves-light btn-small" href="sign-up.php?signup=success">Log-in</a></button>
-                <li class="navbarli"><a class="waves-effect waves-light btn-small" href="sign-up.php">Sign-up</a></li>
-            </ul>
+<body style="background-color:rgba(0,0,0,0.87)">
+   
+<?php
 
-        </div>
-
-    </nav>
+    if (empty ($_SESSION['username'])){
+      
+     include ("includes/headernormalversion.php");
+               }
+    
+    
+         else {
+    
+           include ("includes/headerloginversion.php");
+         }
+?>
 
     <div class="row" style="background-color: #282525;">
 
@@ -61,8 +60,28 @@
                     <i class="material-icons prefix">lock</i>
                 <input id="password" type="password" name="password" class="validate" style="color: white">
                 <label for="password">Password</label>
+               
+            </div>
+                     
+        </div>
+        <div class="row">
+            <div class="col s12">
+
+            <?php if ($_SERVER['QUERY_STRING']=="login=errorpraznopolje"){
+                        echo ('<p style="color:red; font-size:10px; margin-top:-80px; text-align:left;">You need to fill out all the field</p>');
+            }
+
+            if ($_SERVER['QUERY_STRING']=="login=errorkrivipass"){
+                echo ('<p style="color:red; font-size:10px; margin-top:-80px; text-align:left;">Wrong password</p>');
+    }
+
+    if ($_SERVER['QUERY_STRING']=="login=errornijedoniorezultat"){
+        echo ('<p style="color:red; font-size:10px; margin-top:-80px; text-align:left;">Wrong username</p>');
+}
+                ?>
             </div>
         </div>
+      
         <div class="row">
                 <div class="input-field col s12" >
                       
@@ -85,7 +104,10 @@
 
 
     </div>
+    <?php
+   include ('includes/footer.php');
 
+   ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
 
@@ -95,6 +117,10 @@
     <script>
         $(document).ready(function () {
             M.updateTextFields();
+
+            $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 
         $('#loginbutton').click(function(e){
